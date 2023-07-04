@@ -46,48 +46,38 @@ await imapAdSync.startAdSync(imapSyncState);
 #### Listen to Events
 ```
 // set up AdSyncEventListener 
-class ... implements AdSyncEventListener {
-
+class <SomeClassInYourNodeProject> implements AdSyncEventListener {
   ...
-
-  // listen to events ...
-    
+  // listen to events ...  
   async onMailbox(imapMailbox: ImapMailbox, eventType: AdSyncEventType) {
     console.log(
       `onMailbox ${AdSyncEventType[eventType]} event received => imapMailbox: ${imapMailbox}`
     );
   }
-
   async onMailboxStatus(imapMailboxStatus: ImapMailboxStatus) {
     console.log(
       `onMailboxStatus event received => imapMailboxStatus: ${imapMailboxStatus}`
     );
   }
-
   async onMail(imapMail: ImapMail, eventType: AdSyncEventType) {
     console.log(
       `onMail ${AdSyncEventType[eventType]} event received => imapMail: ${imapMail}`
     );
   }
-
   async onPostpone(postponedUntil: Date) {
     console.log(
       `onPostpone event received => postponedUntil: ${postponedUntil}`
     );
   }
-
   async onFinish(downloadedQuota: number) {
     console.log(
       `onFinish event received => downloadedQuota: ${downloadedQuota}`
     );
   }
-
   async onError(imapError: ImapError) {
     console.log(`onError event received => imapError: ${imapError.error}`);
-  }  
-  
+  }    
   ...
-  
 }
 ```
 
@@ -113,6 +103,6 @@ ImapAdSync Copyright (C) 2023 Johannes Muenichsdorfer
 
 Details, see `LICENSE.txt`
 
-## TOODs
+## TODOs
 
-- [] Publish library on npm
+- [ ] Publish library on npm
