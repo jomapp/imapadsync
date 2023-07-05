@@ -2,7 +2,7 @@
 
 **ImapAdSync** (IMAP Adaptive Synchronization) is a **fast** and **adaptive IMAP client synchronization library** for Node.js.
 
-The algorithm provides, in the median, **12,43% faster Email downloads**[^1] in comparision to a naive baseline approach, downloading mails sequentially one after another. Section [Algorithm Details](223325) presents the optimizations conducted within ImapAdSync. ImapAdSync is using the two libraries [ImapFlow](https://www.npmjs.com/package/imapflow), and [mailparser](https://www.npmjs.com/package/mailparser).
+The algorithm provides, in the median, **12,43% faster Email downloads**[^1] in comparision to a naive baseline approach, downloading mails sequentially one after another. Section [Algorithm Details](#algorithm-details) presents the optimizations conducted within ImapAdSync. ImapAdSync is using the two libraries [ImapFlow](https://www.npmjs.com/package/imapflow), and [mailparser](https://www.npmjs.com/package/mailparser).
 
 ### Usage
 
