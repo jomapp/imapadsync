@@ -1,25 +1,17 @@
 # ImapAdSync
 
-**ImapAdSync** (IMAP Adaptive Synchronization) is a **fast** and **adaptive IMAP client synchronization library** for
-Node.js.
+**ImapAdSync** (IMAP Adaptive Synchronization) is a **fast** and **adaptive IMAP client synchronization library** for Node.js.
 
-ImapAdSync is using the two libraries [ImapFlow](https://www.npmjs.com/package/imapflow),
-and [mailparser](https://www.npmjs.com/package/mailparser).
+The algorithm provides, in the median, **12,43% faster Email downloads**[^1] in comparision to a naive baseline approach, downloading mails sequentially one after another. Section [Algorithm Details](223325) presents the optimizations conducted within ImapAdSync. ImapAdSync is using the two libraries [ImapFlow](https://www.npmjs.com/package/imapflow), and [mailparser](https://www.npmjs.com/package/mailparser).
 
-## Usage
-
-**ImapAdSync** is simple to use. 
-
-After cloning this repository, follow the steps below (from **Building** onwards).
-
-### General Usage
+### Usage
 
 Generally, **ImapAdSync** 
-1. is **initialized** with an `ImapSyncState`
-2. and **emits** events through the `AdSyncEventListener`.
+1. is **initialized** providing an `ImapSyncState`,
+2. and afterward **emits** events through the `AdSyncEventListener`.
 
 #### Initialize
-```
+```TypeScript
 // initalize ImapAccount 
 let imapAccount: ImapAccount = {
   host: 'imap.examplemail.com',
@@ -44,7 +36,7 @@ await imapAdSync.startAdSync(imapSyncState);
 ```
 
 #### Listen to Events
-```
+```TypeScript
 // set up AdSyncEventListener 
 class <SomeClassInYourNodeProject> implements AdSyncEventListener {
   ...
@@ -93,7 +85,7 @@ class <SomeClassInYourNodeProject> implements AdSyncEventListener {
 
 ## Algorithm Details
 
-TBD
+*TBD*
 
 ## License
 
@@ -105,4 +97,6 @@ Details, see `LICENSE.txt`
 
 ## TODOs
 
-- [ ] Publish library on npm
+- [ ] Publish library on NPM
+
+[^1]: J. Muenichsdorfer, "Adaptive Client-Side IMAP Import into an End-To-End Encrypted Email System", Master's Thesis, 2023, on file with author
